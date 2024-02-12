@@ -60,7 +60,6 @@ public class UserDaoJDBCImpl implements UserDao {
              var preparedStatement = connection.prepareStatement(DROP_TABLE)) {
             preparedStatement.executeUpdate();
         } catch (SQLException throwables) {
-            throw new RuntimeException(throwables);
         }
     }
 

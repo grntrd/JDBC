@@ -10,7 +10,6 @@ import java.util.List;
 public class UserDaoJDBCImpl implements UserDao {
 
     private static final UserDaoJDBCImpl INSTANCE = new UserDaoJDBCImpl();
-//    private final Connection connection = Util.open();
     private static final String DELETE_SQL = """
             DELETE FROM users
             WHERE id = ?
@@ -99,11 +98,6 @@ public class UserDaoJDBCImpl implements UserDao {
                 user.setLastName(executeResult.getString("lastName"));
                 user.setAge(executeResult.getByte("age"));
                 list.add(user);
-//                System.out.println(executeResult.getLong("id"));
-//                System.out.println(executeResult.getString("name"));
-//                System.out.println(executeResult.getString("lastName"));
-//                System.out.println(executeResult.getByte("age"));
-//                System.out.println("...");
             }
         } catch (SQLException throwables) {
             throw new RuntimeException(throwables);
